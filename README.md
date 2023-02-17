@@ -5,6 +5,7 @@ Conky config file modified from the [Jelly conky theme.](https://github.com/muha
 The [Open Meteo API](https://open-meteo.com/) is used to obtain weather data.
 
 Showcase:
+
 ![Cover](cover.png)
 
 # Requirements
