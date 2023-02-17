@@ -63,7 +63,7 @@ TEXT
 #   Fetch Data
 #----------------------------------------
 #
-${execi 300 python ~/.cache/forecast_data.py}\
+${execi 300 python ~/.local/share/conky-weather/forecast_data.py}\
 #
 #
 #----------------------------------------
@@ -137,4 +137,4 @@ ${execi 300 jq -r ".weather" ~/.local/share/conky-weather/forecast.json}${font}$
 #   Weather icon (current weather)
 #----------------------------------------
 #
-${image current.svg -p 100,120 -s 64x64}\
+${image ~/.local/share/conky-weather/weather_current.svg -p 100,120 -s 64x64}\
