@@ -153,3 +153,4 @@ cython_debug/
 
 # Project specific:
 lat_lon.txt
+forecast.json

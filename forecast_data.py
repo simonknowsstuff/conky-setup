@@ -5,24 +5,27 @@ import shutil
 import time
 from pathlib import Path
 
-
-REQUEST_PARAMS = {
-    "latitude": 53.83766,
-    "longitude": -9.35136,
-    "daily": {"temperature_2m_max", "temperature_2m_min"},
-    "timezone": "GMT",
-    "current_weather": "true"
-}
 REQUEST_URL = "https://api.open-meteo.com/v1/forecast"
 MAIN_DIRECTORY = Path(__file__).parent.resolve()
 WEATHER_ICON_DIRECTORY = f"{MAIN_DIRECTORY}/weather-icons/"
 OUTPUT_SVG = f"{MAIN_DIRECTORY}/weather_current.svg"
 LATTITUDE = 0.0
 LONGITUDE = 0.0
+
 with open(f'{MAIN_DIRECTORY}/lat_lon.txt', 'r') as file:
     lines = [line.rstrip() for line in file]
     LATITUDE = float(lines[0])
     LONGITUDE = float(lines[1])
+
+REQUEST_PARAMS = {
+    "latitude": LATITUDE,
+    "longitude": LONGITUDE,
+    "daily": {"temperature_2m_max", "temperature_2m_min"},
+    "timezone": "GMT",
+    "current_weather": "true"
+}
+
+
 
 def check_day():
     current_time = time.localtime()
